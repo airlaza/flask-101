@@ -22,3 +22,11 @@ def read_one_product(id):
         abort(404)
     else:
         return jsonify(product), 200
+
+@app.route('/api/v1/produits/<int:id>', methods = ['DELETE'])
+def delete_one_product(id):
+    product = PRODUCTS.pop(id)
+    if product is None: 
+        abort(404)
+    else:
+        return '', 204
