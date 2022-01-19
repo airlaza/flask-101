@@ -1,9 +1,9 @@
 name: CRUD CI by Herilaza
 on:
   push:
-    branches: [ read-product ]
+    branches: [ delete-product ]
   pull_request:
-    branches: [ read-product ]
+    branches: [ delete-product ]
 jobs:
   build:
     runs-on: ubuntu-latest

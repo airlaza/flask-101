@@ -24,3 +24,10 @@ class ApplicationTest(TestCase):
         product = response.json
         self.assertIsInstance(product, dict)
         self.assertGreater(len(product), 1)
+
+    def test_delete_one_product(self):
+        response = self.client.get('/api/v1/produits/1')
+        response_all = self.client.get('/api/v1/produits')
+        product = response.json
+        self.assertIsInstance(response_all.json, dict)
+        # self.assertEqual(len(response_all.json), 2)
